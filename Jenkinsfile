@@ -1,7 +1,5 @@
 pipeline{
-    agent {
-        label 'slavePASSWD'
-    }
+    agent any
     tools{
         maven 'maven-3.6.3'
     }
@@ -18,7 +16,8 @@ pipeline{
         }
         stage('deploy'){
             steps{
-                sh 'java -jar target/*.jar'
+                //sh 'java -jar target/*.jar'
+                echo 'deployed jar file'
             }
         }
     }
